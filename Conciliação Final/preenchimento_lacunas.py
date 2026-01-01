@@ -48,7 +48,7 @@ def processar_relatorios():
                 
                 # Exemplo: Se encontrar matching, você deve definir o valor real aqui
                 # custo_herdado = buscar_custo_fiat_original(match_row['Origem'])
-                pass 
+                df_target.at[idx, 'Custo_Aquisicao_USD'] = match_row['Quantidade'].values[0] 
 
         # Recalcular Resultado: Venda - Custo
         df_target['Resultado'] = df_target['Valor_Venda'] - df_target['Custo_Aquisicao_USD']
